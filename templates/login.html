@@ -10,15 +10,24 @@
   </head>
   <body>
     <div class="container">
+      <div class="title-link">
+        <a href="/">Main page</a>
+      </div>
       <div class="wrapper">
-        <form class="auth-form" method="post" action="/">
+        <form class="auth-form" method="post" action="/?action=login">
           <div class="form-group">
             <label class="form-label" for="email">Email</label>
-            <input type="email" name="email" id="email" />
+            <input type="email" name="email" id="email" value="<? if(isset($_POST['email'])): ?><?= $_POST['email'] ?><?endif?>" />
+            <? if(!empty($loginResult['errors']) && !empty($loginResult['errors']['email'])): ?>
+              <div class="error"><?= $loginResult['errors']['email'] ?></div>
+            <? endif ?>
           </div>
           <div class="form-group">
             <label class="form-label" for="password">Password</label>
-            <input type="password" name="password" id="password" />
+            <input type="password" name="password" id="password" value="<? if(isset($_POST['password'])): ?><?= $_POST['password'] ?><?endif?>" />
+            <? if(!empty($loginResult['errors']) && !empty($loginResult['errors']['password'])): ?>
+              <div class="error"><?= $loginResult['errors']['password'] ?></div>
+            <? endif ?>
           </div>
           <div class="form-group">
             <button type="submit" class="login-form-btn">Login</button>

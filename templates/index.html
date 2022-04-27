@@ -6,13 +6,29 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="/static/base.css" type="text/css"/>
 	<link rel="stylesheet" href="/static/index.css" type="text/css"/>
-	<title>Login</title>
+	<title>Main page</title>
 </head>
 <body>
-<div class="container">
-	<div class="wrapper">
-		index
+	<div class="header">
+		<div class="header-container">
+			<div class="auth-info-container">
+				<? if($isAuth): ?>
+					<div class="user">Admin</div>
+				<? endif ?>
+				<div class="auth-link">
+					<? if($isAuth): ?>
+						<a href="/?action=logout">Logout</a>
+					<? else: ?>
+						<a href="/?action=login">Login</a>
+					<? endif ?>
+				</div>
+			</div>
+		</div>
 	</div>
-</div>
+	<div class="container">
+		<div class="content">
+			Content Index
+		</div>
+	</div>
 </body>
 </html>
