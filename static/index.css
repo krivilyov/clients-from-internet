@@ -38,3 +38,31 @@
 .auth-link a:hover {
 	border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
+
+.content {
+	margin: 0 -5px;
+}
+
+.main-row-container {
+	margin-bottom: 30px;
+}
+
+.main-row {
+	display: flex;
+}
+
+.card-wrap {
+	padding: 5px;
+}
+
+.card {
+	background: #fff;
+	flex: 0 0 200px;
+	width: 200px;
+	border: 1px solid rgba(176, 175, 175, 0.52);
+	padding: 10px;
+}
+
+.sub-row {
+	display: flex;
+}
