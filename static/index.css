@@ -49,6 +49,11 @@
 
 .main-row {
 	display: flex;
+	flex-wrap: wrap;
+}
+
+.card-group {
+	margin-bottom: 50px;
 }
 
 .card-wrap {
@@ -56,6 +61,7 @@
 }
 
 .card {
+	position: relative;
 	background: #fff;
 	flex: 0 0 200px;
 	width: 200px;
@@ -63,6 +69,24 @@
 	padding: 10px;
 }
 
-.sub-row {
-	display: flex;
+.open-group {
+	display: block;
+	position: absolute;
+	right: 3px;
+	bottom: 3px;
+	width: 20px;
+	height: 16px;
+}
+
+.open-group svg {
+	width: 100%;
+	height: 100%;
+}
+
+.sub-card {
+	margin-left: 15px;
+}
+
+.hidden {
+	display: none;
 }
