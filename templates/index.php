@@ -32,8 +32,8 @@
 					<?php
 
 						function tplSubCards ($card) {
-							$tplSubCards = '<div class="sub-card">';
-							$tplSubCards .= '<div class="card-wrap">';
+							$tplSubCards = '<div class="sub-card hidden">';
+							$tplSubCards .= '<div class="card-wrap js-card-wrap">';
 							$tplSubCards .= '<div class="card">';
 							$tplSubCards .= '<div class="card-title">' . $card['title'] . '</div>';
 							$tplSubCards .= '<div class="card-description">' . $card['description'] . '</div>';
@@ -70,7 +70,7 @@
 
 					<?php foreach($cards as $card): ?>
 						<div class="card-group">
-							<div class="card-wrap">
+							<div class="card-wrap js-card-wrap">
 								<div class="card">
 									<div class="card-title"><?= $card['title'] ?></div>
 									<div class="card-description"><?= $card['description'] ?></div>
@@ -100,5 +100,6 @@
 			</div>
 		</div>
 	</div>
+	<script src="/static/app.js"></script>
 </body>
 </html>

@@ -57,6 +57,7 @@
 }
 
 .card-wrap {
+	cursor: pointer;
 	padding: 5px;
 }
 
