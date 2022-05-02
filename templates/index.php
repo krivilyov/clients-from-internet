@@ -32,7 +32,9 @@
 					<?php
 
 						function tplSubCards ($card) {
-							$tplSubCards = '<div class="sub-card hidden">';
+							$parentCard = count($card['children']) > 0 ? "js-parent-card" : "";
+
+							$tplSubCards = '<div class="sub-card js-sub-card ' . $parentCard . '">';
 							$tplSubCards .= '<div class="card-wrap js-card-wrap">';
 							$tplSubCards .= '<div class="card">';
 							$tplSubCards .= '<div class="card-title">' . $card['title'] . '</div>';
@@ -67,33 +69,43 @@
 						}
 					?>
 
+					<?php
+					//										echo '<pre>';
+					//										var_dump($card['children']);
+					//										echo '</pre>'; die;
+						$subCards = renderSubCards($cards);
+						echo $subCards;
+					?>
+
 
 					<?php foreach($cards as $card): ?>
-						<div class="card-group">
-							<div class="card-wrap js-card-wrap">
-								<div class="card">
-									<div class="card-title"><?= $card['title'] ?></div>
-									<div class="card-description"><?= $card['description'] ?></div>
-									<?php if(count($card['children']) > 0): ?>
-										<span class="open-group js-open-group">
+						<div class="card-group js-card-group">
+							<div class="step-block-cards js-sub-card">
+								<div class="card-wrap js-card-wrap">
+									<div class="card">
+										<div class="card-title"><?= $card['title'] ?></div>
+										<div class="card-description"><?= $card['description'] ?></div>
+										<?php if(count($card['children']) > 0): ?>
+											<span class="open-group js-open-group">
 											<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
 											<metadata> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata>
 											<g><path d="M494.4,806.3L10,193.8l980,4.6L494.4,806.3z"/></g>
 											</svg>
 										</span>
-									<?php endif ?>
+										<?php endif ?>
+									</div>
 								</div>
-							</div>
 
-							<?php
-								if(count($card['children']) > 0){
-	//										echo '<pre>';
-	//										var_dump($card['children']);
-	//										echo '</pre>'; die;
-									$subCards = renderSubCards($card['children']);
-									echo $subCards;
-								}
-							?>
+								<?php
+									if(count($card['children']) > 0){
+										//										echo '<pre>';
+										//										var_dump($card['children']);
+										//										echo '</pre>'; die;
+										$subCards = renderSubCards($card['children']);
+										echo $subCards;
+									}
+								?>
+							</div>
 						</div>
 					<?php endforeach ?>
 				<?php endif ?>

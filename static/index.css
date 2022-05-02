@@ -88,6 +88,10 @@
 	margin-left: 15px;
 }
 
-.hidden {
+.sub-card .card-wrap {
+	display: block;
+}
+
+.sub-card.js-parent-card .sub-card {
 	display: none;
 }

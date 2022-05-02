@@ -9,7 +9,13 @@
 
 			//if it parent card
 			if(openBtn) {
-				console.log(openBtn)
+				// //up to parent
+				// const parent = this.closest('.js-sub-card');
+				// //find all children and show all
+				// const children = parent.querySelectorAll('.js-sub-card')
+				// console.log(parent);
+
+				this.classList.add('active');
 			}
 
 		})
