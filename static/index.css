@@ -77,6 +77,11 @@
 	bottom: 3px;
 	width: 20px;
 	height: 16px;
+	transition-duration: 0.4s;
+}
+
+.open-group.active {
+	transform: rotate(180deg);
 }
 
 .open-group svg {
@@ -84,14 +89,19 @@
 	height: 100%;
 }
 
-.sub-card {
+.card-item {
 	margin-left: 15px;
+	visibility: visible;
+	opacity: 1;
+	transition: all 0.5s ease 0s;
 }
 
-.sub-card .card-wrap {
-	display: block;
+.hidden {
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.5s ease 0s;
 }
 
-.sub-card.js-parent-card .sub-card {
+.displayNone {
 	display: none;
 }
