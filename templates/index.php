@@ -33,14 +33,14 @@
 
 						function tplSubCards ($card, $i) {
 							$parentCard = count($card['children']) > 0 ? "js-parent-card" : "";
-							$isHidden = $i > 0 ? "hidden" : "";
+							$isHidden = $i > 0 ? "isHidden" : "";
 							$display = $i > 0 ? "displayNone" : "";
 
 							$tplSubCards = '<div class="card-item js-card-item ' . $parentCard . ' ' . $isHidden . ' ' .$display .'">';
-							$tplSubCards .= '<div class="card-wrap js-card-wrap">';
+							$tplSubCards .= '<div class="card-wrap js-card-wrap" data-id="'. $card['id'] .'">';
 							$tplSubCards .= '<div class="card">';
-							$tplSubCards .= '<div class="card-title">' . $card['title'] . '</div>';
-							$tplSubCards .= '<div class="card-description">' . $card['description'] . '</div>';
+							$tplSubCards .= '<div class="card-title js-card-title">' . $card['title'] . '</div>';
+							$tplSubCards .= '<div class="card-description js-card-description hidden">' . $card['description'] . '</div>';
 							$tplSubCards .= count($card['children']) > 0 ? '<span class="open-group js-open-group">
 											<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
 											<metadata> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata>
@@ -76,6 +76,10 @@
 						echo $subCards;
 					?>
 				<?php endif ?>
+			</div>
+			<div class="description-row js-description-row">
+				<h1 class="js-title"></h1>
+				<div class="description js-description"></div>
 			</div>
 		</div>
 	</div>

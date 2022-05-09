@@ -40,7 +40,10 @@
 }
 
 .content {
-	margin: 0 -5px;
+	display: flex;
+	box-sizing: border-box;
+	align-items: flex-start;
+	margin: 0 0 0 -20px;
 }
 
 .main-row-container {
@@ -48,8 +51,20 @@
 }
 
 .main-row {
+	flex: 0 0 75%;
 	display: flex;
 	flex-wrap: wrap;
+}
+
+.description-row {
+	box-sizing: border-box;
+	background: #fff;
+	flex: 0 0 25%;
+	padding: 20px;
+}
+
+.description-row h1 {
+	margin: 0 0 15px 0;
 }
 
 .card-group {
@@ -96,7 +111,7 @@
 	transition: all 0.5s ease 0s;
 }
 
-.hidden {
+.isHidden {
 	visibility: hidden;
 	opacity: 0;
 	transition: all 0.5s ease 0s;
@@ -104,4 +119,13 @@
 
 .displayNone {
 	display: none;
+}
+
+.hidden {
+	display: none;
+}
+
+.card-title {
+	font-size: 20px;
+	line-height: 24px;
 }

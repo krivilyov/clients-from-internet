@@ -22,10 +22,10 @@
 								group[i].classList.toggle('displayNone');
 
 								setTimeout(() => {
-									group[i].classList.toggle('hidden');
+									group[i].classList.toggle('isHidden');
 								}, 100)
 							} else {
-								group[i].classList.toggle('hidden');
+								group[i].classList.toggle('isHidden');
 
 								setTimeout(() => {
 									group[i].classList.toggle('displayNone');
@@ -34,9 +34,24 @@
 						}
 					}
 				}
-
-
 			}
+
+			//start insert card data
+			const card = {
+				id: '',
+				title: '',
+				description: '',
+			}
+			card.id = this.getAttribute('data-id');
+			card.title = this.querySelector('.js-card-title').innerHTML;
+			card.description = this.querySelector('.js-card-description').innerHTML;
+
+			const cardInfo = document.querySelector('.js-description-row');
+
+			cardInfo.setAttribute('data-id', card.id);
+			cardInfo.querySelector('.js-title').textContent = card.title;
+			cardInfo.querySelector('.js-description').textContent = card.description;
+			//stop insert card data
 
 		})
 	}
