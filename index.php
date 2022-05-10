@@ -36,8 +36,36 @@
 
 	//DATA section
 	$data = new Data();
+
+	//CRUD
+	if (isset($_POST['id'])){
+		$card = [
+			'id' => $_POST['id'],
+			'title' => $_POST['title'],
+			'description' => $_POST['description'],
+			'parentId' => $_POST['parentId'],
+		];
+
+		$data->updateCardById($card);
+	}
+
+	if (empty($_POST['id']) && !empty($_POST['title'])){
+		$card = [
+			'title' => $_POST['title'],
+			'description' => $_POST['description'],
+			'parentId' => $_POST['parentId'],
+		];
+
+		$data->createCard($card);
+	}
+
+	if (!empty($_POST['deleteId'])){
+		$data->deleteCard($_POST['deleteId']);
+	}
+
 	//get cards
 	$cards = $data->getCards();
+	$allCards = $data->getAllCards();
 
 //	echo '<pre>';
 //	print_r($cards);

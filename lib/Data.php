@@ -11,6 +11,13 @@ class Data
 		return $this->createTree($data);
 	}
 
+	public function getAllCards()
+	{
+		$db = new DataBase();
+
+		return $db->getData();
+	}
+
 	//create tree with elements
 	public function createTree($data)
 	{
@@ -37,5 +44,22 @@ class Data
 				$this->generateElemTree($treeElem[$key]['children'], $parents);
 			}
 		}
+	}
+
+	public function createCard ($card) {
+		$db = new DataBase();
+		return $db->createCard($card);
+	}
+
+	public function updateCardById ($card) {
+		if(!empty($card)) {
+			$db = new DataBase();
+			return $db->updateCardById($card);
+		}
+	}
+
+	public function deleteCard ($id) {
+		$db = new DataBase();
+		return $db->deleteCard($id);
 	}
 }

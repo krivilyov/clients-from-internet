@@ -82,7 +82,7 @@
 	flex: 0 0 200px;
 	width: 200px;
 	border: 1px solid rgba(176, 175, 175, 0.52);
-	padding: 10px;
+	padding: 16px 10px;
 }
 
 .open-group {
@@ -122,10 +122,72 @@
 }
 
 .hidden {
-	display: none;
+	display: none!important;
 }
 
 .card-title {
 	font-size: 20px;
 	line-height: 24px;
+}
+
+.title {
+	font-size: 24px;
+	line-height: 28px;
+}
+
+.description {
+	margin-bottom: 20px;
+}
+
+.description-row textarea {
+	font-family: 'Roboto', sans-serif;
+	resize: none;
+	box-sizing: border-box;
+	border: 1px solid rgba(153, 153, 153, 0.13);
+	width: 100%;
+	outline: none;
+	padding: 5px;
+}
+
+.description-row select {
+	font-family: 'Roboto', sans-serif;
+	width: 100%;
+	margin-bottom: 30px;
+	border: 1px solid rgba(153, 153, 153, 0.13);
+	padding: 5px;
+}
+
+.card-update-btn {
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	color: #fff;
+	background: darkgreen;
+	padding: 8px 0;
+	border: none;
+	width: 100%;
+}
+
+.disabled {
+	pointer-events: none;
+	background: darkgrey;
+	cursor: default;
+}
+
+.card-remove-icon {
+	display: block;
+	position: absolute;
+	right: 4px;
+	top: 4px;
+	width: 18px;
+	height: 18px;
+}
+
+.card-remove-icon svg {
+	width: 100%;
+	fill: indianred;
+}
+
+.card-remove-icon:hover svg {
+	fill: #585757;
 }
