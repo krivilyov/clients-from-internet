@@ -2,15 +2,6 @@
 	require_once('./lib/Auth.php');
 	require_once('./lib/Data.php');
 
-//	try {
-//		$db = new PDO('mysql:host=db;port=3306;dbname=clients-from-internet', 'root', 'root');
-//	} catch (PDOException $e) {
-//		include('templates/db_error.html');
-//		die;
-//	}
-
-	//	var_dump($db->getAttribute(PDO::ATTR_CONNECTION_STATUS));
-
 	//get user state
 	$auth = new Auth();
 	$isAuth = $auth->getAuth();
@@ -66,10 +57,6 @@
 	//get cards
 	$cards = $data->getCards();
 	$allCards = $data->getAllCards();
-
-//	echo '<pre>';
-//	print_r($cards);
-//	echo '</pre>'; die;
 
 	if ($_GET['action'] === "login" && !$isAuth) {
 		include('templates/login.html');
