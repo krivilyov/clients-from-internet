@@ -75,7 +75,7 @@ INSERT INTO cards (id, title, description, parentId) VALUES (16, 'Card 16', 'Des
 
 10. Запуск `http://localhost:8080/`
 <br />
-![Иллюстрация к проекту](https://raw.github.com/krivilyov/clients-from-internet/raw/main/static/project_description_1.png) <br />
+![Иллюстрация к проекту](https://github.com/krivilyov/clients-from-internet/raw/main/static/project_description_1.png) <br />
 ![Иллюстрация к проекту](https://github.com/krivilyov/clients-from-internet/raw/main/static/project_description_2.png) <br />
 ![Иллюстрация к проекту](https://github.com/krivilyov/clients-from-internet/raw/main/static/project_description_3.png) <br />
 ![Иллюстрация к проекту](https://github.com/krivilyov/clients-from-internet/raw/main/static/project_description_4.png) <br />
